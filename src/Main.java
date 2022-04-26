@@ -1,13 +1,23 @@
-public class Main {
+import java.util.Arrays;
 
+public class Main {
 
     public static void main(String[] args) {
 
-        task1(2016);
+        task1(2000);
         task2(1, 2014);
         task3(110);
-        task5('3', '2', '1', '6', '5');
+        task4("abccffggtt");
+
+        int [] arr = {1,2,3,4,5};
+        System.out.println(Arrays.toString(arr));
+        task5(arr);
+        System.out.println(Arrays.toString(arr));
+
+
+
     }
+
 
 
     //Задание 1
@@ -48,18 +58,24 @@ public class Main {
         }
     }
 
-    //Задание 5
-
-    public static void task5(int reversName, char c, char c1, char c2, char c3) {
-        char[] revers = {'3', '2', '1', '6', '5'};
-        {
-            for (int i = revers.length - 1; i >= 0; i--) {
-                System.out.print(revers[i]);
+    //Задание 4
+    public static void task4(String line) {
+        for (int i = 0; i < line.length() - 1; i++)
+            if (line.charAt(i) == line.charAt(i + 1)) {
+                System.out.println("Дубль найден " + line.charAt(i));
+                return;
             }
-        }
-    }
-}
 
+        System.out.println("Дубль не найден");
+    }
+
+    //Задание 5
+    public static void task5(int[] arr) {
+        for (int i = 0; i < arr.length-1; i++) {
+            arr[i]=arr[arr.length-1-i];
+        }
+        }
+}
 
 
 
